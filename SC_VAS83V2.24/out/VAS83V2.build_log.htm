@@ -1,0 +1,180 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.37.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: 1 1, 1, LIC=FQQMA-1JL13-YDEK5-G5KLS-D6AJN-B9QAA
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Professional  Version: 5.37.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.18
+Assembler:       Armasm.exe V6.18
+Linker/Locator:  ArmLink.exe V6.18
+Library Manager: ArmAr.exe V6.18
+Hex Converter:   FromElf.exe V6.18
+CPU DLL:         SARMCM3.DLL V5.37.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.9.0
+Dialog DLL:      TCM.DLL V1.56.1.0
+ 
+<h2>Project:</h2>
+D:\Private\Sergiy-83\Projects\Hardware\_AP2\USBeb\SC_VAS83V2.24\MDK-ARM\VAS83V2.uvprojx
+Project File Date:  10/26/2023
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.18', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'VAS83V2'
+assembling startup_stm32f103xb.s...
+compiling S83_lcd.c...
+compiling S83_keyboard.c...
+compiling S83_graphics.c...
+../Src/S83_graphics.c(128): warning: comparison of distinct pointer types ('const unsigned char *' and 'char *') [-Wcompare-distinct-pointer-types]
+        for(; image < max_addr; image++)
+              ~~~~~ ^ ~~~~~~~~
+1 warning generated.
+compiling S83_gui.c...
+../Src/S83_gui.c(32): warning: In file included from...
+../Src/S83_gui_480x320.c(34): warning: passing 'const char[960]' to parameter of type 'const unsigned char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                G_print_image(image_vol_24x20,24,20,250,POS_Y_STR_DAC-2);
+                              ^~~~~~~~~~~~~~~
+../Inc\S83_graphics.h(44): note: passing argument to parameter 'image' here
+void G_print_image(const unsigned char *image,uint16_t size_x,uint16_t size_y,uint16_t x,uint16_t y);
+                                        ^
+../Src/S83_gui.c(32): warning: In file included from...
+../Src/S83_gui_480x320.c(59): warning: implicit declaration of function 'G_print_image_gray' is invalid in C99 [-Wimplicit-function-declaration]
+                                G_print_image_gray(boot_0_grad,48,48,x,y);
+                                ^
+../Src/S83_gui_480x320.c(63): warning: implicit declaration of function 'G_print_image_gray_r90grad' is invalid in C99 [-Wimplicit-function-declaration]
+                                G_print_image_gray_r90grad(boot_0_grad,48,48,x,y);
+                                ^
+../Src/S83_gui_480x320.c(67): warning: implicit declaration of function 'G_print_image_gray_r180grad' is invalid in C99 [-Wimplicit-function-declaration]
+                                G_print_image_gray_r180grad(boot_0_grad,48,48,x,y);
+                                ^
+../Src/S83_gui_480x320.c(71): warning: implicit declaration of function 'G_print_image_gray_r270grad' is invalid in C99 [-Wimplicit-function-declaration]
+                                G_print_image_gray_r270grad(boot_0_grad,48,48,x,y);
+                                ^
+../Src/S83_gui_480x320.c(127): warning: assigning to 'const unsigned char *' from 'const char[960]' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                                        case ICON_BACK:                         current_image = image_back_24x20;       break;
+                                                                                              ^ ~~~~~~~~~~~~~~~~
+../Src/S83_gui_480x320.c(128): warning: assigning to 'const unsigned char *' from 'const char[960]' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                                        case ICON_FOLDER:                       current_image = image_folder_24x20; break;
+                                                                                              ^ ~~~~~~~~~~~~~~~~~~
+../Src/S83_gui_480x320.c(129): warning: assigning to 'const unsigned char *' from 'const char[960]' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                                        case ICON_FILE:                         current_image = image_spk_24x20;                break;
+                                                                                              ^ ~~~~~~~~~~~~~~~
+../Src/S83_gui_480x320.c(130): warning: assigning to 'const unsigned char *' from 'const char[960]' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                                        case ICON_PLAYING:              current_image = image_play_24x20;       break;
+                                                                                      ^ ~~~~~~~~~~~~~~~~
+../Src/S83_gui_480x320.c(131): warning: assigning to 'const unsigned char *' from 'const char[960]' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                                        case ICON_PAUSE:                        current_image = image_pause_24x20; break;
+                                                                                              ^ ~~~~~~~~~~~~~~~~~
+../Src/S83_gui_480x320.c(132): warning: assigning to 'const unsigned char *' from 'const char[960]' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                                        case ICON_POFF:                         current_image = image_POFF_24x20; break;
+                                                                                              ^ ~~~~~~~~~~~~~~~~
+../Src/S83_gui_480x320.c(159): warning: passing 'uint8_t *' (aka 'unsigned char *') to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                G_print_string_len_f8x16(pString_time,308,POS_Y_STR_TIME,17,curr_theme.color_txt_par_value,COLOR_BLACK);
+                                         ^~~~~~~~~~~~
+../Inc\S83_main_data.h(167): note: expanded from macro 'pString_time'
+#define pString_time            &RX_Buffer[TYPE_LCD_OTHER_DATA][STRING_TIME] //<F1><F2><F0><EE><EA><E0> <E2><F0><E5><EC><E5><ED><E8>
+                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Inc\S83_graphics.h(39): note: passing argument to parameter 'sym' here
+void G_print_string_len_f8x16(char *sym,uint16_t x,uint16_t y,uint16_t len,uint16_t color,uint16_t b_color);
+                                    ^
+../Src/S83_gui.c(32): warning: In file included from...
+../Src/S83_gui_480x320.c(207): warning: passing 'uint8_t *' (aka 'unsigned char *') to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                G_print_string_len_f8x16(pVolume_db,280,POS_Y_STR_DAC,5,curr_theme.color_txt_par_value,COLOR_BLACK);
+                                         ^~~~~~~~~~
+../Inc\S83_main_data.h(168): note: expanded from macro 'pVolume_db'
+#define pVolume_db                                                      &RX_Buffer[TYPE_LCD_OTHER_DATA][VOLUME_DB]
+                                                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Inc\S83_graphics.h(39): note: passing argument to parameter 'sym' here
+void G_print_string_len_f8x16(char *sym,uint16_t x,uint16_t y,uint16_t len,uint16_t color,uint16_t b_color);
+                                    ^
+../Src/S83_gui.c(32): warning: In file included from...
+../Src/S83_gui_480x320.c(238): warning: passing 'uint8_t *' (aka 'unsigned char *') to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                        G_print_string_len_f8x16(pFileBitrate,170,POS_Y_STR_FILE,7,curr_theme.color_txt_par_value,COLOR_BLACK);
+                                                 ^~~~~~~~~~~~
+../Inc\S83_main_data.h(169): note: expanded from macro 'pFileBitrate'
+#define pFileBitrate                                            &RX_Buffer[TYPE_LCD_OTHER_DATA][FILE_BITRATE]
+                                                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Inc\S83_graphics.h(39): note: passing argument to parameter 'sym' here
+void G_print_string_len_f8x16(char *sym,uint16_t x,uint16_t y,uint16_t len,uint16_t color,uint16_t b_color);
+                                    ^
+14 warnings generated.
+compiling main.c...
+../Src/main.c(72): warning: implicit declaration of function 'Enable_TIMER' is invalid in C99 [-Wimplicit-function-declaration]
+        Enable_TIMER(&htim2);
+        ^
+../Src/main.c(163): warning: implicit declaration of function 'USBD_CUSTOM_HID_SendReport' is invalid in C99 [-Wimplicit-function-declaration]
+                USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS,TX_Buffer,65);         //<CE><F2><EF><F0><E0><E2><EB><FF><E5><EC> <EF><EE> USB
+                ^
+2 warnings generated.
+compiling gpio.c...
+compiling tim.c...
+compiling stm32f1xx_it.c...
+compiling S83_encoder.c...
+compiling S83_themes.c...
+compiling S83_spi_software.c...
+compiling S83_main_data.c...
+compiling stm32f1xx_hal_msp.c...
+compiling system_stm32f1xx.c...
+compiling stm32f1xx_hal_gpio_ex.c...
+compiling stm32f1xx_hal_pcd.c...
+compiling stm32f1xx_hal_pcd_ex.c...
+compiling stm32f1xx_ll_usb.c...
+compiling stm32f1xx_hal_tim.c...
+compiling stm32f1xx_hal_tim_ex.c...
+compiling stm32f1xx_hal.c...
+compiling stm32f1xx_hal_rcc.c...
+compiling stm32f1xx_hal_rcc_ex.c...
+compiling stm32f1xx_hal_gpio.c...
+compiling stm32f1xx_hal_cortex.c...
+compiling stm32f1xx_hal_pwr.c...
+compiling stm32f1xx_hal_flash.c...
+compiling stm32f1xx_hal_flash_ex.c...
+compiling stm32f1xx_hal_dma.c...
+compiling usbd_desc.c...
+compiling usbd_conf.c...
+compiling usb_device.c...
+compiling usbd_custom_hid_if.c...
+../Src/usbd_custom_hid_if.c(128): warning: implicit declaration of function 'set_lcd_brightness' is invalid in C99 [-Wimplicit-function-declaration]
+                                set_lcd_brightness(LCD_BRIG);
+                                ^
+1 warning generated.
+compiling usbd_core.c...
+compiling usbd_ctlreq.c...
+compiling usbd_ioreq.c...
+compiling usbd_customhid.c...
+linking...
+Program Size: Code=23406 RO-data=11190 RW-data=5288 ZI-data=4672  
+FromELF: creating hex file...
+"..\out\VAS83V2.axf" - 0 Error(s), 18 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM.CMSIS.5.9.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.6.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.3.0.pack
+                Keil.STM32F1xx_DFP.2.3.0
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_VAS83V2
+  C:/Keil_v5/ARM/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  C:/Keil_v5/ARM/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.6.0
+Build Time Elapsed:  00:00:32
+</pre>
+</body>
+</html>
